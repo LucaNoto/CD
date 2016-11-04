@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head> 
+  <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js" >
+  </script>
+
+  <script>
+  versao = "A"
+  Projeto = "App"
+
+  </script>
+
+  <script src="../scripts/main.js"></script>
+<script>
+
+    function verify(){
+
+      // definir critério se usuário terminou
+
+      var ok = 0;
+
+      if (document.getElementById("aplicativo").checked == true){
+        ok = 1;
+
+      }
+
+
+      if (ok == 1){
+        // se terminou, gravar tempo final
+        // redirecionar para página de agradecimentos
+        envia("final", id_pessoa, Date.now(), versao, Projeto);
+        window.location.replace("agradecimento.html");
+      } 
+
+      else {
+        alert("Você selecionou o projeto errado! Tente Novamente");
+      }
+
+
+    }
+
+
+    </script>
+  <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+  <meta charset="utf-8">
+  <title>Projetos Virtuais</title>
+</head>
+<body>
+<script src="../client.min.js"></script>
+      <script>
+      
+        var client = new ClientJS();
+        var id_pessoa = client.getFingerprint();
+
+      </script> 
+  <nav>
+    <ul class="cf">
+
+        <li><a href="../index2.html">Home</a></li>
+
+        <li><a class="dropdown" href="#">Taxonomia dos Projetos</a>
+            <ul>
+                <li><a href="eletronica.html"> Eletrônica </a></li>
+                <li><a href="mecanica.html"> Mecânica </a></li>
+                <li><a href="computacao.html"> Computação </a></li>
+                <li><a href="design.html"> Design </a></li>
+            </ul>
+        </li>
+        <li><a href="about.html">Sobre Mim</a></li>
+    </ul>
+
+</nav>
+
+<aside id="sticky-social">
+    <ul>
+        <li><a href="https://www.facebook.com/KleberBambamfc/?fref=ts" class="entypo-facebook" target="_blank"><span>Facebook</span></a></li>
+        <li><a href="https://twitter.com/kleberbbb?lang=pt" class="entypo-twitter" target="_blank"><span>Twitter</span></a></li>
+        <li><a href="#" class="entypo-linkedin" target="_blank"><span>LinkedIn</span></a></li>
+        <li><a href="https://www.instagram.com/bambamoficial/" class="entypo-instagrem" target="_blank"><span>Instagram</span></a></li>
+        <li><a href="https://github.com/LucaNoto/CDDA" class="entypo-github" target="_blank"><span>GitHub</span></a></li>
+    </ul>
+</aside>
+
+
+<h1>Projetos de Computação</h1>
+
+<div class="lista">
+
+<ul>
+
+  <li><h5>Python</h5></li>
+  <li>
+    <ul>
+      <li><a href="#"><input type="radio" name="projeto" id="final"> Projeto Final</a></li> <br>
+      <li><a href="#"><input type="radio" name="projeto" id="crud"> CRUD</a></li> <br>
+      <li><a href="#"><input type="radio" name="projeto" id="jogodavelha"> Jogo da Velha</a></li> <br>
+      <li><a href="#"><input type="radio" name="projeto" id="conceito"> Cálculo de Conceito</a></li> <br>
+    </ul>
+  </li>
+  <li><h5>C++</h5></li>
+  <li>
+    <ul>
+      <li><a href="#"><input type="radio" name="projeto" id="meteorologica"> Estação Meteorológica</a></li> <br>
+    </ul>
+  </li>
+  <li><h5>HTML/CSS</h5></li>
+  <li>
+    <ul>
+      <li><a href="#"><input type="radio" name="projeto" id="interface"> Comparação de interface</a></li> <br>
+      <li><a href="#"><input type="radio" name="projeto" id="website"> Protótipo de website</a></li> <br>
+      <li><a href="#"><input type="radio" name="projeto" id="aplicativo"> Protótipo de Aplicativo</a></li> <br>
+    </ul>
+  </li>
+  <li><button onclick="verify();">Achei!</button></li>
+</ul>
+
+</div>
+
+
+<h2> Projetos em Destaque </h2>
+
+
+<div class="img">
+  <a target="_blank" href="../img/arduino.jpg">
+    <img src="../img/arduino.jpg" width="300" height="200" alt="">
+  </a>
+  <div class="desc">Projeto 1 </div>
+</div>
+
+<div class="img">
+  <a target="_blank" href="../img/aperto.jpg">
+    <img src="../img/aperto.jpg" width="300" height="200" alt="">
+  </a>
+  <div class="desc">Projeto 2 </div>
+</div>
+
+<div class="img">
+  <a target="_blank" href="../img/pcb.jpg">
+    <img src="../img/pcb.jpg" width="300" height="200" alt="">
+  </a>
+  <div class="desc">Projeto 3 </div>
+</div>
+
+<div class="img">
+  <a target="_blank" href="../img/pcb.jpg">
+    <img src="../img/pcb.jpg" width="300" height="200" alt="">
+  </a>
+  <div class="desc">Projeto 4 </div>
+
+</div>
+
+
+
+</body>
+</html>

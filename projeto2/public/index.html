@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script>
+function sorteia(){
+  var rnd = Math.random();
+  var pg_a = "https://testeab-cd.firebaseapp.com/index2.html";
+  var pg_b = "https://testeab-cd.firebaseapp.com/Site.html";
+
+  var destino = "";
+  var projeto = "";
+
+  if (rnd < 0.5){
+    destino = pg_a;
+    if (rnd<0.25) {
+      projeto = "Protótipo de App";
+    }
+    else{
+       projeto = "Circuito Eletrônico com Amplificador Operacional";
+    }
+  } else {
+    destino = pg_b;
+    if (rnd<0.75) {
+      projeto = "Protótipo de App";
+    }
+    else{
+       projeto = "Circuito Eletrônico com Amplificador Operacional";
+    }
+  }
+
+  var pd=[projeto,destino];
+  return pd;
+}
+
+function clicou(destino){
+  window.location.replace(destino);
+}
+
+</script>
+
+    <meta charset="utf-8">
+    <title>Welcome to Firebase Hosting</title>
+    <style media="screen">
+      body {
+        font-family: Roboto, Arial, sans-serif;
+        background: #ECEFF1;
+        color: rgba(0,0,0,0.87);
+      }
+      a {
+        color: rgb(3,155,229);
+      }
+      #message {
+        max-width: 500px;
+        margin: 40px auto;
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
+        border-radius: 2px;
+        background: white;
+        padding: 16px 24px;
+      }
+      #message h1 {
+        font-size: 22px;
+        font-weight: 500;
+        text-align: center;
+        margin: 0 0 16px;
+      }
+      #message p {
+        font-weight: 300;
+        line-height: 150%;
+        text-align: center;
+      }
+
+      #message h2 {
+        font-weight: 300;
+        line-height: 150%;
+        text-align: center;
+        color: red; 
+        
+      }
+      #message ul {
+        list-style: none;
+        margin: 16px 0 0;
+        padding: 0;
+        text-align: center;
+      }
+      #message li a {
+        display: inline-block;
+        padding: 8px;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 500;
+        background: rgb(3,155,229);
+        color: white;
+        border: 1px solid rgb(3,155,229);
+        border-radius: 3px;
+        font-size: 14px;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+      }
+    </style>
+  </head>
+  <body >
+  <script>
+  setTimeout(sorteia,3000);
+  var lista = sorteia()
+  </script>
+
+
+
+    <div id="message">
+      <h1>Muito obrigado por aceitar colaborar conosco</h1>
+      <p>Ao clicar no botão abaixo, você será redirecionado para uma página de portfólio. Selecione nela o projeto indicado abaixo:</p>
+      <h2 id="nome"></h2>
+      <p><button onclick="clicou(lista[1]);">IR!</button><p>
+
+      <script>
+      document.getElementById("nome").innerHTML = lista[0];
+      </script>
+
+    
+
+
+ 
+  </body>
+</html>
